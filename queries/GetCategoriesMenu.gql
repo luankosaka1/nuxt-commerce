@@ -1,0 +1,48 @@
+query GetCategoriesMenu {
+    categories(filters: { parent_category_uid: { eq: "Mg==" } }) {
+        items {
+            uid
+            name
+            include_in_menu
+            url_key
+            children_count
+            children {
+                uid
+                name
+                level
+                include_in_menu
+                url_key
+                children_count
+                children {
+                    uid
+                    name
+                    level
+                    include_in_menu
+                    url_key 
+                    children_count
+                    children {
+                        uid
+                        name
+                        level
+                        include_in_menu
+                        url_key
+                        children_count
+                        children {
+                            uid
+                            name
+                            level
+                            include_in_menu
+                            url_key
+                        }
+                    }
+                }
+            }
+        }
+        total_count
+        page_info {
+            current_page
+            page_size
+            total_pages
+        }
+    }
+}
