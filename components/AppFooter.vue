@@ -3,19 +3,3 @@
     <p>&copy; 2024 LCM Kosaka Informatica</p>
   </footer>
 </template>
-
-<style>
-  footer {
-    &.app-footer {
-      padding: 2rem 2rem;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      gap: 5rem;
-      border-top: 1px solid #d5d5d5cc;
-      .logo {
-        font-size: 1.5rem;
-      }
-    }
-  } 
-</style>

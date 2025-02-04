@@ -1,0 +1,176 @@
+header {
+    &.app-header {
+        padding: 2rem 2rem;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        gap: 5rem;
+        border-bottom: 1px solid #d5d5d5cc;
+
+        .logo {
+            font-size: 1.5rem;
+        }
+
+        .header-menu-mobile {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100vw;
+            height: 100vh;
+            z-index: 100;
+
+            .background {
+                background-color: #000;
+                width: 100vw;
+                height: 100vh;
+                position: absolute;
+                top: 0;
+                right: 0;
+                z-index: 105;
+                opacity: .5;
+            }
+
+            .menu-content {
+                position: absolute;
+                top: 0;
+                left: 0;
+                width: 85vw;
+                height: 100vh;
+                background-color: #FFF;
+                z-index: 110;
+                padding: 2.4rem 1.6rem;
+                display: flex;
+                flex-direction: column;
+                gap: 2rem;
+                overflow-y: auto;
+
+                .menu-user {
+                    display: flex;
+                    align-items: flex-start;
+                    gap: 1rem;
+                    justify-content: space-between;
+
+                    .user {
+                        display: flex;
+                        align-items: center;
+                        gap: 1rem;
+                    }
+                }
+
+                .menu-categories {
+                    ul {
+                        margin-bottom: .8rem;
+
+                        li {
+                            margin: 1rem 0;
+                        }
+                    }
+
+                    .category-level-1 {
+                        .category-level-2 {
+                            margin-left: 1.6rem;
+
+                            a {
+                                color: gray;
+                                transition: .3s;
+
+                                &:hover {
+                                    color: #534f4f;
+                                }
+                            }
+                        }
+                    }
+                }
+
+                hr {
+                    opacity: .2;
+                }
+
+                .menu-title {
+                    font-size: 1.4rem;
+                    font-weight: 600;
+                    margin-bottom: 1rem;
+                }
+            }
+
+            .btn {
+                float: right;
+
+                &.btn-close {
+                    font-size: 1.6rem;
+                }
+            }
+        }
+
+        .header-search {
+            display: none;
+        }
+
+        .header-options {
+            display: none;
+        }
+    }
+}
+
+@media (min-width: 1025px) {
+    header {
+        &.app-header {
+            .header-search {
+                display: flex;
+                gap: 1rem;
+                flex: 1;
+                position: relative;
+
+                .input-search {
+                    flex: 1;
+                    border: 1px solid #d5d5d5cc;
+                    border-radius: 0.25rem;
+                    padding: 0.5rem;
+                    width: 10rem;
+                    height: 4.5rem;
+                    padding: 0 5rem 0 2rem;
+                }
+
+                button {
+                    position: absolute;
+                    z-index: 5;
+                    right: 2rem;
+                    top: 1rem;
+                }
+            }
+
+            .header-options {
+                display: flex;
+                flex-wrap: nowrap;
+                gap: 5rem;
+                align-items: center;
+                justify-content: space-around;
+
+                .header-option {
+                    display: flex;
+                    gap: 1rem;
+                    align-items: center;
+                    justify-content: center;
+
+                    span {
+                        display: none;
+                    }
+                }
+            }
+        }
+    }
+}
+
+@media (min-width: 1440px) {
+    header {
+        &.app-header {
+            .header-options {
+                .header-option {
+                    span {
+                        display: block;
+                    }
+                }
+            }
+        }
+    }
+}

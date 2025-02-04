@@ -1,0 +1,12 @@
+.caroucel-session {
+    max-width: 1540px;
+    width: 100%;
+    margin: 0 auto;
+
+    .carousel__item {
+        img {
+            width: 100%;
+            object-fit: contain;
+        }
+    }
+}

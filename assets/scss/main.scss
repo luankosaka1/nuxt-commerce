@@ -1,53 +1,21 @@
-:root {
-    --color-primary: #6ac768;
-    --color-secundary: #1e9d20;
-}
+@import url('typography.scss');
 
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    font-family: 'Poppins';
-    -webkit-font-smoothing: antialiased;
-    font-family: Montserrat, sans-serif;
-}
+@import url('components/header.scss');
+@import url('components/footer.scss');
 
-@font-face {
-    font-family: 'Montserrat', sans-serif;
-    src: url('/fonts/FarAwayGalaxy.woff') format('woff');
-    font-weight: normal;
-    font-style: normal;
-    font-display: swap;
-}
+@import url('components/caroucel.scss');
+@import url('components/beneficies.scss');
 
-html,
-body {
-    font-family: 'Poppins';
-    height: 100vh;
-    font-size: 62.5%;
-}
+.layout {
+    &.default {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        height: 100vh;
 
-button {
-    background-color: transparent;
-    border: none;
-    cursor: pointer;
-}
-
-a {
-    color: var(--color-primary);
-    text-decoration: none;
-    transition: .3s;
-}
-
-a:hover {
-    color: var(--color-secundary);
-    text-decoration: none;
-}
-
-ul {
-    list-style: none;
-}
-
-body {
-    font-size: 1.6rem;
+        main {
+            flex: 1;
+            /* padding: 4rem 0; */
+        }
+    }
 }

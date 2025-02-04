@@ -22,18 +22,3 @@ const slides = [
   "https://d1csarkz8obe9u.cloudfront.net/posterpreviews/grocery-sale-retail-or-e-commerce-banner-ad-design-template-67720435bb809be27f46dfb1dd44c6fa_screen.jpg?ts=1606113265"
 ]
 </script>
-
-<style lang="scss">
-.caroucel-session {
-  max-width: 1540px;
-  width: 100%;
-  margin: 0 auto;
-
-  .carousel__item {
-    img {
-      width: 100%;
-      object-fit: contain;
-    }
-  }
-}
-</style>
