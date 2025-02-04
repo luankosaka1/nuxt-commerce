@@ -7,7 +7,7 @@
 
         .list {
             overflow-x: auto;
-            padding-bottom: 2rem;
+            padding: .5rem 0.3rem 2rem 0.1rem;
             display: flex;
             flex-wrap: nowrap;
             gap: 2rem;
@@ -56,7 +56,7 @@
         &.v1 {
             .list {
                 .card {
-                    min-width: auto;
+                    min-width: 25rem;
                 }
             }
         }
