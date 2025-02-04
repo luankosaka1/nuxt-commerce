@@ -3,10 +3,17 @@
     width: 100%;
     margin: 0 auto;
 
+    .carousel {
+        .carousel__viewport {
+            height: 45rem;
+        }
+    }
+
     .carousel__item {
         img {
             width: 100%;
-            object-fit: contain;
+            height: 45rem;
+            object-fit: none;
         }
     }
 }

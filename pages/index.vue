@@ -2,6 +2,7 @@
     <div class="page page-index">
       <V1Caroucel />
       <V1Beneficies />
+      <V1TopProducts />
     </div>
 </template>
 <style lang="scss">
