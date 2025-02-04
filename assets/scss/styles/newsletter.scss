@@ -1,0 +1,29 @@
+.page {
+    &.page-index {
+        .newsletter {
+            padding: 2rem 2rem;
+
+            &.v1 {
+                .columns {
+                    display: flex;
+                    align-items: center;
+                    gap: 2rem;
+
+                    .column-left {
+                        flex: 1;
+
+                        img {
+                            width: 100%;
+                            height: 40rem;
+                            object-fit: cover;
+                        }
+                    }
+
+                    .column-right {
+                        flex: 1;
+                    }
+                }
+            }
+        }
+    }
+}
