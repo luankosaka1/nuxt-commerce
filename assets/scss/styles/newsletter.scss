@@ -1,6 +1,8 @@
 .page {
     &.page-index {
         .newsletter {
+            margin: 0 auto;
+            max-width: 1540px;
             padding: 2rem 2rem;
 
             &.v1 {
@@ -21,6 +23,17 @@
 
                     .column-right {
                         flex: 1;
+
+                        .btn {
+                            padding: 1rem 2rem;
+                            border-radius: 5px;
+                            font-weight: 600;
+
+                            &.btn-primary {
+                                background-color: var(--color-primary);
+                                color: #fff;
+                            }
+                        }
                     }
                 }
             }
