@@ -4,10 +4,10 @@
         width: 100%;
         margin: 0 auto;
         padding: 0 1.6rem;
-        overflow-x: auto;
-        padding-bottom: 2rem;
 
         .list {
+            overflow-x: auto;
+            padding-bottom: 2rem;
             display: flex;
             flex-wrap: nowrap;
             gap: 2rem;
