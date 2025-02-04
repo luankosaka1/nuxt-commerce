@@ -1,28 +1,37 @@
 <script setup lang="ts">
-const slides = Array.from({ length: 5 }, (_, index) => ({
-  id: index + 1,
-  url: `https://picsum.photos/800/600?random=${index + 1}`,
-}));
+const products = ref([]);
+
+try {
+  const { data, error } = await useAsyncGql({
+    operation: 'GetTopProducts',
+    variables: {
+      id: 41,
+    },
+  });
+
+  if (error?.value?.statusCode) {
+    console.log('error', error);
+  } else {
+    products.value = data?.value?.category?.products.items;
+  }
+} catch (error) {
+  console.log(error);
+}
 </script>
 
 <template>
   <session class="top-products v1">
     <h2>Top Products</h2>
     <div class="list">
-      <div class="card" v-for="(slide, index) in slides" :key="'top-products-caroucel-index-' + index">
-        <NuxtLink :to="'/product/' + index" :title="'Product ' + index">
+      <div class="card" v-for="(product, index) in products" :key="'top-products-caroucel-index-' + index">
+        <NuxtLink :to="'/product/' + product.url_key" :title="product.name">
           <div class="header">
-            <NuxtImg :src="slide.url" alt="Product Image" />
-            <h4>Product Name {{ index }}</h4>
+            <NuxtImg :src="product.small_image.url" alt="Product Image" />
+            <h4>{{ product.name }}</h4>
           </div>
-          <div class="content">
-            <p v-show="index % 2 == 0">Aliquam ullamcorper rutrum nisi, vitae consequat nunc volutpat sit amet. Proin
-              aliquet, diam et porttitor
-              euismod, nisi ante convallis tortor</p>
-            <p v-show="index % 2 == 1">Aliquam ullamcorper rutrum nisi, euismod, nisi ante convallis tortor</p>
-          </div>
+          <div class="content" v-html="product.short_description.html"></div>
           <div class="footer">
-            <p>$99.00</p>
+            <p>{{ formatPrice(product.price_range.minimum_price.final_price) }}</p>
           </div>
         </NuxtLink>
       </div>

@@ -1,0 +1,41 @@
+query GetTopProducts($id: Int!) {
+    category(id: $id) {
+        name
+        products {
+            items {
+                uid
+                sku
+                name
+                short_description {
+                    html
+                }
+                small_image {
+                    url
+                }
+                url_key
+                price_range {
+                    minimum_price {
+                        final_price {
+                            currency
+                            value
+                        }
+                        regular_price {
+                            currency
+                            value
+                        }
+                    }
+                    maximum_price {
+                        final_price {
+                            currency
+                            value
+                        }
+                        regular_price {
+                            currency
+                            value
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
