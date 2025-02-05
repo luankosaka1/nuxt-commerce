@@ -1,14 +1,29 @@
 <script setup lang="ts">
+import type { SubscribeResult } from '~/models/newsletterTypes';
+import { subscribeToNewsletter } from '~/services/newsletterService';
+
+const loading = ref(false);
+const subscribeMessage = ref<{ text: string, type: string }>({ text: '', type: '' });
+
 async function handleFormSubmit(event: any) {
   event.preventDefault();
 
-  const email = event.target['newsletter-email'].value;
+  if (loading.value) return;
 
-  try {
-    const response = await GqlSubscribeEmailToNewsletter(email);
-  } catch (error) {
-    console.error(error);
+  subscribeMessage.value = { text: '', type: '' };
+  loading.value = true;
+
+  const email = event.target['newsletter-email'].value;
+  const result: SubscribeResult = await subscribeToNewsletter({ email });
+
+  if (result.success) {
+    event.target['newsletter-email'].value = '';
+    subscribeMessage.value = { text: result.message, type: 'success' };
+  } else {
+    subscribeMessage.value = { text: result.message, type: 'error' };
   }
+
+  loading.value = false;
 }
 </script>
 
@@ -23,10 +38,15 @@ async function handleFormSubmit(event: any) {
         <p>Subscribe to our newsletter to get the latest news and updates.</p>
         <form class="form" @submit="handleFormSubmit">
           <div class="form-label">
-            <input type="email" name="newsletter-email" required placeholder="Enter your email address" />
+            <input :disabled="loading" :class="{ 'disabled': loading }" type="email" name="newsletter-email" required
+              placeholder="Enter your email address" />
           </div>
-          <button class="btn btn-primary" type="submit">Subscribe</button>
+          <button :disabled="loading" :class="{ 'disabled': loading }" class="btn btn-primary"
+            type="submit">Subscribe</button>
         </form>
+        <p v-show="subscribeMessage?.text" class="alert" :class="'alert-' + subscribeMessage.type">
+          {{ subscribeMessage?.text }}
+        </p>
       </div>
     </div>
   </div>
