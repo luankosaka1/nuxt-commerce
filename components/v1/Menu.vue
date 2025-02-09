@@ -16,7 +16,7 @@
             <div class="hello">Olá, visitante</div>
             <div class="extra">
               <div class="login-register">
-                <NuxtLink to="/" title="login">entre</NuxtLink>
+                <NuxtLink to="/login" title="login">entre</NuxtLink>
                 ou
                 <NuxtLink to="/" title="register">cadastre-se</NuxtLink>
               </div>
@@ -76,7 +76,7 @@
 const showMenuModal = ref(false);
 const categoryMenu = ref<any>({});
 
-const {data, error} = await useAsyncGql({
+const { data, error } = await useAsyncGql({
   operation: 'GetCategoriesMenu',
 })
 
