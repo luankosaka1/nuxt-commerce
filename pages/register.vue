@@ -54,6 +54,7 @@ async function handleFormSubmit(event: any) {
   });
 
   if (result.success) {
+    event.target.reset();
     useRouter().push('/');
   } else {
     loginMessage.value = { text: result.message, type: 'error' };
