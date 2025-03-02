@@ -1,6 +1,7 @@
-import type { GenerateCustomerTokenParams, GenerateCustomerTokenResult } from "~/models/generateCustomerTokenTypes";
+import type { GenerateCustomerTokenParams } from "~/models/generateCustomerTokenTypes";
+import type { GqlResponse } from "~/types/GqlResponse";
 
-export async function GenerateCustomerTokenService({ email, password }: GenerateCustomerTokenParams): Promise<GenerateCustomerTokenResult> {
+export async function GenerateCustomerTokenService({ email, password }: GenerateCustomerTokenParams): Promise<GqlResponse> {
     try {
         const { generateCustomerToken } = await GqlGenerateCustomerToken({ email, password });
         if (generateCustomerToken?.token) {

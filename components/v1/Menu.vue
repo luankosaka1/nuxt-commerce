@@ -16,9 +16,9 @@
             <div class="hello">Olá, visitante</div>
             <div class="extra">
               <div class="login-register">
-                <NuxtLink to="/login" title="login">entre</NuxtLink>
+                <NuxtLink to="/login" title="login" @click="showMenuModal = false">entre</NuxtLink>
                 ou
-                <NuxtLink to="/" title="register">cadastre-se</NuxtLink>
+                <NuxtLink to="/register" title="register" @click="showMenuModal = false">cadastre-se</NuxtLink>
               </div>
             </div>
           </div>

@@ -1,0 +1,45 @@
+.register {
+    &.v1 {
+        max-width: 400px;
+        width: 100%;
+        margin: 0 auto;
+        padding: 2rem;
+
+        .form {
+            .label-checkbox {
+                display: flex;
+                align-items: center;
+                gap: 1rem;
+
+                input,
+                label {
+                    width: fit-content;
+                    margin: 0;
+                }
+            }
+
+            .btn {
+                margin-top: 1rem;
+
+                &.btn-primary {
+                    padding: 1rem 2rem;
+                    background-color: var(--color-primary);
+                    color: #FFF;
+                    font-size: 1.6rem;
+
+                    &:hover {
+                        background-color: var(--color-secundary);
+                        transition: 1s;
+                    }
+                }
+            }
+        }
+
+
+        .columns {
+            display: flex;
+            gap: 1rem;
+            align-items: center;
+        }
+    }
+}

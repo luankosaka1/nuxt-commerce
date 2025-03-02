@@ -6,8 +6,6 @@ const loginMessage = ref<{ text: string, type: string }>({ text: '', type: '' })
 const loading = ref(false);
 
 async function handleFormSubmit(event: any) {
-  event.preventDefault();
-
   if (loading.value) return;
 
   loginMessage.value = { text: '', type: '' };
@@ -34,7 +32,7 @@ async function handleFormSubmit(event: any) {
 <template>
   <div class="login v1">
     <h1>Login</h1>
-    <form class="form" @submit="handleFormSubmit">
+    <form class="form" @submit.prevent="handleFormSubmit">
       <div class="form-group">
         <label for="email">E-mail</label>
         <input type="email" id="email" required name="email" />
