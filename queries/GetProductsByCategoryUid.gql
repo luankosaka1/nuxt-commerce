@@ -1,7 +1,5 @@
 query GetProductsByCategoryUid($uid: String!) {
-  products(filter: {
-    category_uid: { eq: $uid }
-  }) {
+  products(filter: { category_uid: { eq: $uid } }) {
     total_count
     aggregations {
       attribute_code
