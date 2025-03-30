@@ -5,6 +5,9 @@ query GetCategoriesMenu {
             name
             include_in_menu
             url_key
+            products {
+                total_count
+            }
             children_count
             children {
                 uid
@@ -12,6 +15,9 @@ query GetCategoriesMenu {
                 level
                 include_in_menu
                 url_key
+                products {
+                    total_count
+                }
                 children_count
                 children {
                     uid
@@ -19,6 +25,9 @@ query GetCategoriesMenu {
                     level
                     include_in_menu
                     url_key 
+                    products {
+                        total_count
+                    }
                     children_count
                     children {
                         uid
@@ -26,6 +35,9 @@ query GetCategoriesMenu {
                         level
                         include_in_menu
                         url_key
+                        products {
+                            total_count
+                        }
                         children_count
                         children {
                             uid
@@ -33,6 +45,9 @@ query GetCategoriesMenu {
                             level
                             include_in_menu
                             url_key
+                            products {
+                                total_count
+                            }
                         }
                     }
                 }

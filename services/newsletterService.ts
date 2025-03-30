@@ -1,6 +1,6 @@
 import type { SubscribeParams, SubscribeResult } from "~/models/newsletterTypes";
 
-export async function subscribeToNewsletter({ email }: SubscribeParams): SubscribeResult {
+export async function subscribeToNewsletter({ email }: SubscribeParams): Promise<SubscribeResult> {
     try {
         const { subscribeEmailToNewsletter } = await GqlSubscribeEmailToNewsletter({ email });
         if (subscribeEmailToNewsletter?.status === 'SUBSCRIBED') {

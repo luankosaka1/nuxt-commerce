@@ -1,0 +1,11 @@
+query GetCategoriesByUrlKey($url: String!) {
+  categories(filters: {
+    url_key: {eq: $url}
+  }) {
+    total_count
+    items {
+      uid
+      url_path
+    }
+  }
+}

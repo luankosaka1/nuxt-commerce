@@ -1,0 +1,17 @@
+query RouteType($url: String!) {
+  route(url: $url) {
+    redirect_code
+    relative_url
+    type
+  }
+  products(filter: {
+    url_key: {eq: $url}
+  }) {
+    total_count
+  }
+  categories(filters: {
+    url_key: {eq: $url}
+  }) {
+    total_count
+  }
+}
